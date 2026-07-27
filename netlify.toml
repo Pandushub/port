@@ -1,19 +1,7 @@
-# netlify.toml — deploy config for a static site (no build step needed)
+# netlify.toml — static site, no build step
 [build]
   publish = "."
 
-# Nice URLs: /projects instead of /projects.html
-[[redirects]]
-  from = "/projects"
-  to = "/projects.html"
-  status = 200
-
-[[redirects]]
-  from = "/about"
-  to = "/about.html"
-  status = 200
-
-# Long-cache static assets, always-fresh HTML
 [[headers]]
   for = "/css/*"
   [headers.values]

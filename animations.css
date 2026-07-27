@@ -1,0 +1,30 @@
+/* animations.css — keyframes + scroll reveal */
+
+/* aurora blob drift */
+@keyframes drift-a { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(8vw, 6vh) scale(1.15); } }
+@keyframes drift-b { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-7vw, -5vh) scale(1.1); } }
+@keyframes drift-c { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-6vw, 7vh) scale(1.2); } }
+
+/* hero rotating word */
+@keyframes word-in  { from { opacity: 0; transform: translateY(100%) rotate(4deg); } to { opacity: 1; transform: translateY(0) rotate(0); } }
+@keyframes word-out { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-100%) rotate(-4deg); } }
+
+/* marquee */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* scroll cue */
+@keyframes cue { 0%,100% { opacity: .3; transform: scaleY(.6); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); } }
+
+/* scroll reveal — only hides when JS is on (.js on <html>) so no-JS shows everything */
+.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); }
+.js .reveal.in { opacity: 1; transform: none; }
+.js .reveal.d1 { transition-delay: .08s; }
+.js .reveal.d2 { transition-delay: .16s; }
+.js .reveal.d3 { transition-delay: .24s; }
+.js .reveal.d4 { transition-delay: .32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .track-a, .track-b { animation: none; }
+  .scroll-cue .bar { animation: none; }
+}

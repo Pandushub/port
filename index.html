@@ -3,120 +3,262 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pandu — Portfolio</title>
-<meta name="description" content="Pandu — I design and build web apps, finance dashboards, and AI-powered interfaces." />
+<title>Pandu — Web · AI · Data Engineer</title>
+<meta name="description" content="Pandu is a freelance engineer building fast, beautiful, intelligent web products across web, AI, and data." />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/reset.css" />
-<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/themes.css" />
 <link rel="stylesheet" href="css/base.css" />
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/components.css" />
-<link rel="stylesheet" href="css/pages.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<div class="editor">
 
-  <header class="tabbar">
-    <div class="dots"><i></i><i></i><i></i></div>
-    <nav class="tabs" aria-label="Sections">
-      <a class="tab" data-file="index.html" href="index.html"><span class="fdot"></span>index.html</a>
-      <a class="tab" data-file="projects.html" href="projects.html"><span class="fdot"></span>projects.html</a>
-      <a class="tab" data-file="about.html" href="about.html"><span class="fdot"></span>about.html</a>
-    </nav>
-    <div class="spacer"></div>
-    <div class="meta">~/pandu/portfolio</div>
-  </header>
+<div class="aurora" aria-hidden="true"><span class="blob"></span></div>
+<div class="grid-overlay" aria-hidden="true"></div>
 
-  <div class="viewport">
-    <div class="col">
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <span class="brand">Pandu<span class="dot">.</span></span>
+  <div class="links">
+    <a href="#services">Services</a>
+    <a href="#work">Approach</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="right">
+    <div class="theme-switch" role="group" aria-label="Color theme">
+      <span class="glider" aria-hidden="true"></span>
+      <button data-theme="aurora" aria-label="Aurora theme"><span class="swatch aurora"></span></button>
+      <button data-theme="ember" aria-label="Ember theme"><span class="swatch ember"></span></button>
+      <button data-theme="mono" aria-label="Mono theme"><span class="swatch mono"></span></button>
+    </div>
+    <a class="btn primary" href="mailto:panduchiluvuri7@gmail.com">Let's talk <span class="arrow">&rarr;</span></a>
+  </div>
+</nav>
 
-      <section class="hero">
-        <div>
-          <p class="comment"><span class="kw">const</span> role = <span style="color:var(--accent)">"web &amp; AI engineer"</span>;</p>
-          <h1>I design and build web apps that turn messy inputs into <span class="hl">clean, usable outputs</span>.</h1>
-          <p class="lead">Résumé tooling, live finance dashboards, and AI-powered interfaces — shipped end to end, from data handling to the last pixel.</p>
-          <div class="cta">
-            <a class="btn primary" href="projects.html">View projects <span aria-hidden="true">&rarr;</span></a>
-            <a class="btn" href="mailto:panduchiluvuri7@gmail.com">Get in touch</a>
-          </div>
-        </div>
-
-        <div class="term" aria-hidden="true">
-          <div class="term-bar"><i></i><i></i><i></i><span>bash — pandu@portfolio</span></div>
-          <div class="term-body">
-            <span class="prompt">pandu@portfolio</span>:<span class="path">~</span>$ <span id="typed"></span><span class="cursor"></span>
-            <span class="out" id="term-out" style="opacity:0;transition:opacity .3s ease">
-              <b>pandu</b><br />
-              verdant/  quant-dashboard/  terminal/  flashcards/
-            </span>
-          </div>
-        </div>
-      </section>
-
-      <div class="section-head">
-        <h2>Featured work</h2>
-        <span class="count"><a href="projects.html" style="color:var(--accent)">all projects &rarr;</a></span>
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="container">
+    <div class="inner">
+      <span class="kicker reveal"><span class="live"></span> Available for freelance &amp; full-time</span>
+      <h1>
+        <span class="line reveal d1">I design &amp; build</span>
+        <span class="line reveal d2"><span class="rotator grad-text" id="rotator"></span></span>
+        <span class="line reveal d3">people love to use.</span>
+      </h1>
+      <p class="lead reveal d4">Freelance engineer working across front-end, AI, and data. I take products from a rough idea to polished, shipped, and reliable — sweating the details so the result feels effortless.</p>
+      <div class="cta reveal d4">
+        <a class="btn primary" href="#contact">Start a project <span class="arrow">&rarr;</span></a>
+        <a class="btn" href="#services">See what I do</a>
       </div>
-
-      <div class="grid">
-        <article class="card">
-          <div class="card-top"><span class="fname">verdant.tsx</span><span class="tag">AI · Documents</span></div>
-          <h3>Verdant</h3>
-          <p class="blurb">AI résumé &amp; cover-letter builder — upload a PDF/DOCX/TXT résumé, name a target role, and get tailored, review-before-download documents across hundreds of layouts.</p>
-          <div class="stack"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">Cloudflare Workers</span></div>
-          <div class="card-foot"><span class="status">Live</span><a class="go" href="https://github.com/pandushub" target="_blank" rel="noopener">open <span aria-hidden="true">&rarr;</span></a></div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><span class="fname">dashboard.jsx</span><span class="tag">Finance · Data</span></div>
-          <h3>Quant Dashboard</h3>
-          <p class="blurb">A quantitative finance dashboard streaming live market data into portfolio analytics — positions, performance, and risk in one readable view.</p>
-          <div class="stack"><span class="chip">Web</span><span class="chip">Live market data</span><span class="chip">Analytics</span></div>
-          <div class="card-foot"><span class="status">Live</span><a class="go" href="https://github.com/pandushub" target="_blank" rel="noopener">open <span aria-hidden="true">&rarr;</span></a></div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><span class="fname">terminal.js</span><span class="tag">Finance · Terminal</span></div>
-          <h3>Terminal</h3>
-          <p class="blurb">A Bloomberg-style financial terminal for a portfolio showcase — dense, real-time market readouts in a dark, information-first interface built for speed.</p>
-          <div class="stack"><span class="chip">Web</span><span class="chip">Real-time UI</span></div>
-          <div class="card-foot"><span class="status">Live</span><a class="go" href="https://github.com/pandushub" target="_blank" rel="noopener">open <span aria-hidden="true">&rarr;</span></a></div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><span class="fname">flashcards.js</span><span class="tag">AI · Learning</span></div>
-          <h3>Flashcard Generator</h3>
-          <p class="blurb">A local-first AI tool that turns notes into study flashcards, running the model on-device so nothing leaves the browser.</p>
-          <div class="stack"><span class="chip">Web</span><span class="chip">Local AI inference</span></div>
-          <div class="card-foot"><span class="status">Live</span><a class="go" href="https://github.com/pandushub" target="_blank" rel="noopener">open <span aria-hidden="true">&rarr;</span></a></div>
-        </article>
-      </div>
-
-      <p class="foot-note">© 2026 Pandu · Designed &amp; built by me · <a href="mailto:panduchiluvuri7@gmail.com">panduchiluvuri7@gmail.com</a></p>
-
     </div>
   </div>
+  <div class="scroll-cue" aria-hidden="true">scroll <span class="bar"></span></div>
+</header>
 
-  <footer class="statusbar">
-    <span class="seg glyph">&#9095; main*</span>
-    <span class="seg"><span class="glyph">&#10003;</span> build passing</span>
-    <span class="seg hide-sm dim" id="sb-count">projects</span>
-    <span class="push"></span>
-    <span class="seg hide-sm dim">UTF-8</span>
-    <span class="seg dim">Ln 1, Col 1</span>
-    <span class="seg" id="clock">00:00:00</span>
-  </footer>
+<!-- ===== STATS ===== -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="stats">
+      <!-- EDIT: set real numbers -->
+      <div class="stat reveal">
+        <div class="num grad-text">20+</div>
+        <div class="lbl">Projects designed &amp; built</div>
+      </div>
+      <div class="stat reveal d1">
+        <div class="num grad-text">5</div>
+        <div class="lbl">Domains — web, AI, finance, ML &amp; more</div>
+      </div>
+      <div class="stat reveal d2">
+        <div class="num grad-text">100%</div>
+        <div class="lbl">End-to-end ownership, idea to ship</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-</div>
+<!-- ===== SERVICES ===== -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What I do</span>
+      <h2>Skills that ship <span class="grad-text">real products</span>.</h2>
+      <p>A full toolkit for taking something from concept to a fast, polished, working product.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="ico" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 6h.01M10 6h.01"/></svg>
+        </div>
+        <h3>Web Applications</h3>
+        <p>Fast, responsive front-ends and full-stack apps built with React &amp; TypeScript — accessible, mobile-first, and built to last.</p>
+      </article>
+      <article class="card reveal d1">
+        <div class="ico" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>AI Integration</h3>
+        <p>LLMs and on-device models wired into products the right way — useful, reviewable, and private by design.</p>
+      </article>
+      <article class="card reveal d2">
+        <div class="ico" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        </div>
+        <h3>Data &amp; Dashboards</h3>
+        <p>Live data turned into clear, real-time dashboards — from market feeds to analytics people can actually act on.</p>
+      </article>
+      <article class="card reveal d3">
+        <div class="ico" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
+        </div>
+        <h3>Automation &amp; Tooling</h3>
+        <p>Scripts and tools that remove the repetitive, boring parts of a workflow — so the important work moves faster.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-<script src="js/data.js"></script>
-<script src="js/render.js"></script>
-<script src="js/nav.js"></script>
-<script src="js/statusbar.js"></script>
-<script src="js/terminal.js"></script>
+<!-- ===== HIGHLIGHTS CAROUSEL ===== -->
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">How I work</span>
+      <h2>Principles behind everything I <span class="grad-text">build</span>.</h2>
+    </div>
+
+    <div class="carousel reveal" id="carousel">
+      <div class="viewport">
+        <div class="slides">
+          <div class="slide">
+            <div class="idx grad-text">01 — Principle</div>
+            <h3>From messy input to clean output.</h3>
+            <p>Résumés, market feeds, raw notes — I build systems that parse the mess and hand back something structured, correct, and genuinely usable.</p>
+            <div class="tags"><span class="chip">Parsing</span><span class="chip">Extraction</span><span class="chip">Structure</span></div>
+          </div>
+          <div class="slide">
+            <div class="idx grad-text">02 — Principle</div>
+            <h3>Real-time, never stale.</h3>
+            <p>Live data brought into fast, readable interfaces — so the people using it are always making decisions on what's happening right now.</p>
+            <div class="tags"><span class="chip">Live data</span><span class="chip">Dashboards</span><span class="chip">Analytics</span></div>
+          </div>
+          <div class="slide">
+            <div class="idx grad-text">03 — Principle</div>
+            <h3>AI that earns trust.</h3>
+            <p>Intelligence wired into products with review steps, transparency, and privacy built in — so it helps without ever feeling like a black box.</p>
+            <div class="tags"><span class="chip">LLMs</span><span class="chip">On-device</span><span class="chip">Reviewable</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="dots" aria-label="Slide navigation"></div>
+        <div class="arrows">
+          <button class="prev" aria-label="Previous slide">&larr;</button>
+          <button class="next" aria-label="Next slide">&rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS MARQUEE ===== -->
+<section class="section" style="padding-top:0">
+  <div class="container reveal">
+    <div class="section-head center">
+      <span class="eyebrow">The toolbox</span>
+    </div>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee track-a">
+      <span><b>React</b></span><span>TypeScript</span><span><b>Python</b></span><span>TensorFlow</span><span>Vite</span><span><b>JavaScript</b></span><span>Node</span><span>Cloudflare Workers</span>
+      <span><b>React</b></span><span>TypeScript</span><span><b>Python</b></span><span>TensorFlow</span><span>Vite</span><span><b>JavaScript</b></span><span>Node</span><span>Cloudflare Workers</span>
+    </div>
+  </div>
+  <div class="marquee-wrap" style="margin-top:16px">
+    <div class="marquee track-b">
+      <span>HTML</span><span><b>CSS</b></span><span>PDF.js</span><span><b>LLMs</b></span><span>Data Viz</span><span>Git</span><span><b>Pandas</b></span><span>REST APIs</span>
+      <span>HTML</span><span><b>CSS</b></span><span>PDF.js</span><span><b>LLMs</b></span><span>Data Viz</span><span>Git</span><span><b>Pandas</b></span><span>REST APIs</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about">
+      <div class="reveal">
+        <span class="eyebrow">About</span>
+        <h2 style="font-size:clamp(30px,4.6vw,48px);margin:16px 0 20px">A builder who sweats the <span class="grad-text">details</span>.</h2>
+        <p style="font-size:16.5px;margin-bottom:16px">I'm a student and freelance engineer who likes turning rough, real-world problems into tools people actually enjoy using. I work across front-end, AI, and data, and I'm comfortable owning a project end to end — the logic, the data, and the interface.</p>
+        <p style="font-size:16.5px">Whatever the stack, my goal is the same: something fast, reliable, and clear enough that it just feels effortless to use.</p>
+        <div class="chips">
+          <span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Python</span><span class="chip">TensorFlow</span><span class="chip">AI / LLMs</span><span class="chip">Data Viz</span><span class="chip">Cloudflare</span>
+        </div>
+      </div>
+      <div class="about-card reveal d2">
+        <div class="big">Idea &rarr;<br /><span class="grad-text">shipped.</span></div>
+        <p style="margin:22px 0 26px">Have something in mind? I'd love to hear what you're building.</p>
+        <a class="btn primary" href="mailto:panduchiluvuri7@gmail.com">Email me <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Process</span>
+      <h2>How a project <span class="grad-text">comes together</span>.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3>Discover</h3><p>Understand the goal, the users, and the constraints before anything else.</p></div>
+      <div class="step reveal d1"><div class="n">02</div><h3>Design</h3><p>Shape the flow and the interface, so the build has a clear target.</p></div>
+      <div class="step reveal d2"><div class="n">03</div><h3>Build</h3><p>Ship it end to end with clean, maintainable, well-tested code.</p></div>
+      <div class="step reveal d3"><div class="n">04</div><h3>Refine</h3><p>Test, polish, and iterate until the whole thing feels effortless.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="cta-band reveal">
+      <span class="eyebrow">Let's work together</span>
+      <h2>Let's build something <span class="grad-text">great</span>.</h2>
+      <p>Have a project, a rough idea, or a role in mind? Tell me about it — I reply to every message.</p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn primary" href="mailto:panduchiluvuri7@gmail.com">Start a project <span class="arrow">&rarr;</span></a>
+        <a class="btn" href="https://linkedin.com/in/pandurangaraju-chiluvuri-942677248/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <span class="brand">Pandu<span style="color:var(--accent)">.</span></span>
+      <div class="socials">
+        <a href="mailto:panduchiluvuri7@gmail.com">Email</a>
+        <a href="https://github.com/pandushub" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/pandurangaraju-chiluvuri-942677248/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <p class="fine">© 2026 Pandu · Designed &amp; built by me · panduchiluvuri7@gmail.com</p>
+  </div>
+</footer>
+
+<script src="js/themes.js"></script>
+<script src="js/rotator.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/reveal.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

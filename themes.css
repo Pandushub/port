@@ -1,0 +1,86 @@
+/* themes.css — three palettes. The active one is set via data-theme on <html>.
+ * Default (no attribute) = Aurora. */
+
+:root,
+[data-theme="aurora"] {
+  --bg:        #0B0A1A;
+  --bg-2:      #140C31;
+  --surface:   rgba(255,255,255,0.045);
+  --surface-2: rgba(255,255,255,0.07);
+  --border:    rgba(255,255,255,0.10);
+  --border-lit:rgba(255,255,255,0.22);
+  --text:      #F4F2FF;
+  --text-dim:  #B9B3DC;
+  --text-faint:#7E799E;
+  --accent:    #8B7BFF;
+  --accent-2:  #34D9F0;
+  --accent-3:  #F472B6;
+  --grad:      linear-gradient(115deg, #8B7BFF 0%, #34D9F0 55%, #F472B6 100%);
+  --on-accent: #0A0820;
+  --blob-a:    rgba(139,123,255,.55);
+  --blob-b:    rgba(52,217,240,.42);
+  --blob-c:    rgba(244,114,182,.40);
+  --shadow:    0 30px 80px -40px rgba(0,0,0,.85);
+  --glass-blur: 14px;
+}
+
+[data-theme="ember"] {
+  --bg:        #100906;
+  --bg-2:      #22100A;
+  --surface:   rgba(255,255,255,0.05);
+  --surface-2: rgba(255,255,255,0.08);
+  --border:    rgba(255,255,255,0.11);
+  --border-lit:rgba(255,255,255,0.24);
+  --text:      #FCEFE7;
+  --text-dim:  #D9BCAD;
+  --text-faint:#9C7E70;
+  --accent:    #FF8A4C;
+  --accent-2:  #F43F5E;
+  --accent-3:  #FBBF24;
+  --grad:      linear-gradient(115deg, #FBBF24 0%, #FF8A4C 50%, #F43F5E 100%);
+  --on-accent: #1B0A04;
+  --blob-a:    rgba(255,138,76,.50);
+  --blob-b:    rgba(244,63,94,.42);
+  --blob-c:    rgba(251,191,36,.40);
+  --shadow:    0 30px 80px -40px rgba(0,0,0,.85);
+  --glass-blur: 14px;
+}
+
+[data-theme="mono"] {
+  --bg:        #F4F4F2;
+  --bg-2:      #E9E9E6;
+  --surface:   #FFFFFF;
+  --surface-2: #FBFBFA;
+  --border:    rgba(20,19,26,0.10);
+  --border-lit:rgba(20,19,26,0.22);
+  --text:      #14131A;
+  --text-dim:  #55535E;
+  --text-faint:#8B8996;
+  --accent:    #4F46E5;
+  --accent-2:  #0EA5E9;
+  --accent-3:  #7C3AED;
+  --grad:      linear-gradient(115deg, #4F46E5 0%, #0EA5E9 100%);
+  --on-accent: #FFFFFF;
+  --blob-a:    rgba(79,70,229,.20);
+  --blob-b:    rgba(14,165,233,.18);
+  --blob-c:    rgba(124,58,237,.16);
+  --shadow:    0 30px 70px -44px rgba(20,19,26,.35);
+  --glass-blur: 6px;
+}
+
+/* smooth color transition when switching themes */
+body,
+.nav,
+.card,
+.btn,
+.chip,
+.stat,
+.slide,
+.theme-switch,
+.marquee span,
+.step {
+  transition: background-color .5s ease, color .5s ease, border-color .5s ease, box-shadow .5s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  body, .nav, .card, .btn, .chip, .stat, .slide, .theme-switch, .marquee span, .step { transition: none; }
+}

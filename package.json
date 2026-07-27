@@ -1,13 +1,13 @@
 {
-  "name": "pandu-portfolio",
+  "name": "pandu-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Pandu's portfolio — web apps, finance dashboards, and AI interfaces.",
+  "description": "Pandu — personal marketing site (web, AI, data).",
   "author": "Pandu <panduchiluvuri7@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "npx serve .",
     "dev": "npx serve ."
   },
-  "keywords": ["portfolio", "web", "frontend", "ai", "finance"]
+  "keywords": ["portfolio", "personal-site", "web", "ai", "data"]
 }

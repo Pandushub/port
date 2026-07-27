@@ -1,30 +1,78 @@
-/* base.css — typography, links, global element styling */
+/* base.css — typography, background, shared text utilities */
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--body);
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
-h1, h2, h3 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
+h1, h2, h3, .display {
+  font-family: 'Syne', 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
 
 p { color: var(--text-dim); }
 
-::selection { background: rgba(76,141,255,.28); color: #fff; }
-
-/* code-comment styled eyebrow, used across pages */
-.comment {
-  font-family: var(--mono);
+.eyebrow {
+  font-family: 'Inter', sans-serif;
   font-size: 12.5px;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
   color: var(--text-faint);
 }
-.comment .kw { color: var(--accent-2); }
 
-/* thin scrollbar to match the dark chrome */
-* { scrollbar-width: thin; scrollbar-color: var(--border-lit) transparent; }
-*::-webkit-scrollbar { width: 10px; height: 10px; }
-*::-webkit-scrollbar-thumb { background: var(--border-lit); border-radius: 6px; }
-*::-webkit-scrollbar-track { background: transparent; }
+/* gradient text */
+.grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* the animated aurora background layer */
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 800px at 50% -10%, var(--bg-2), transparent 60%),
+    var(--bg);
+}
+.aurora::before, .aurora::after,
+.aurora .blob {
+  content: "";
+  position: absolute;
+  width: 46vw; height: 46vw;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: .9;
+  will-change: transform;
+}
+.aurora::before { background: var(--blob-a); top: -8%; left: -6%; animation: drift-a 22s ease-in-out infinite; }
+.aurora::after  { background: var(--blob-b); bottom: -14%; right: -8%; animation: drift-b 26s ease-in-out infinite; }
+.aurora .blob   { background: var(--blob-c); top: 30%; left: 42%; width: 38vw; height: 38vw; animation: drift-c 30s ease-in-out infinite; }
+
+/* faint grid overlay for depth */
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at 50% 30%, #000 0%, transparent 75%);
+  opacity: .5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora::before, .aurora::after, .aurora .blob { animation: none; }
+}
