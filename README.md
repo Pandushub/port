@@ -1,4 +1,4 @@
-# Pandu — Personal Site
+# Pandu Personal Site
 
 A polished, animated personal marketing site — built to show off skills, not a list of past projects. Plain HTML/CSS/JS, no framework, no build step.
 
