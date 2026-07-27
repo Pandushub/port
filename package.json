@@ -1,0 +1,13 @@
+{
+  "name": "pandu-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pandu's portfolio — web apps, finance dashboards, and AI interfaces.",
+  "author": "Pandu <panduchiluvuri7@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": ["portfolio", "web", "frontend", "ai", "finance"]
+}

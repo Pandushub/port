@@ -1,0 +1,30 @@
+/* base.css — typography, links, global element styling */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
+
+p { color: var(--text-dim); }
+
+::selection { background: rgba(76,141,255,.28); color: #fff; }
+
+/* code-comment styled eyebrow, used across pages */
+.comment {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+}
+.comment .kw { color: var(--accent-2); }
+
+/* thin scrollbar to match the dark chrome */
+* { scrollbar-width: thin; scrollbar-color: var(--border-lit) transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: var(--border-lit); border-radius: 6px; }
+*::-webkit-scrollbar-track { background: transparent; }

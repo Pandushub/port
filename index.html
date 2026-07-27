@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pandu — Portfolio</title>
+<meta name="description" content="Pandu — I design and build web apps, finance dashboards, and AI-powered interfaces." />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+<div class="editor">
+
+  <header class="tabbar">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <nav class="tabs" aria-label="Sections">
+      <a class="tab" data-file="index.html" href="index.html"><span class="fdot"></span>index.html</a>
+      <a class="tab" data-file="projects.html" href="projects.html"><span class="fdot"></span>projects.html</a>
+      <a class="tab" data-file="about.html" href="about.html"><span class="fdot"></span>about.html</a>
+    </nav>
+    <div class="spacer"></div>
+    <div class="meta">~/pandu/portfolio</div>
+  </header>
+
+  <div class="viewport">
+    <div class="col">
+
+      <section class="hero">
+        <div>
+          <p class="comment"><span class="kw">const</span> role = <span style="color:var(--accent)">"web &amp; AI engineer"</span>;</p>
+          <h1>I design and build web apps that turn messy inputs into <span class="hl">clean, usable outputs</span>.</h1>
+          <p class="lead">Résumé tooling, live finance dashboards, and AI-powered interfaces — shipped end to end, from data handling to the last pixel.</p>
+          <div class="cta">
+            <a class="btn primary" href="projects.html">View projects <span aria-hidden="true">&rarr;</span></a>
+            <a class="btn" href="mailto:panduchiluvuri7@gmail.com">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="term" aria-hidden="true">
+          <div class="term-bar"><i></i><i></i><i></i><span>bash — pandu@portfolio</span></div>
+          <div class="term-body">
+            <span class="prompt">pandu@portfolio</span>:<span class="path">~</span>$ <span id="typed"></span><span class="cursor"></span>
+            <span class="out" id="term-out" style="opacity:0;transition:opacity .3s ease">
+              <b>pandu</b><br />
+              verdant/  quant-dashboard/  terminal/  flashcards/
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-head">
+        <h2>Featured work</h2>
+        <span class="count"><a href="projects.html" style="color:var(--accent)">all projects &rarr;</a></span>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-top"><span class="fname">verdant.tsx</span><span class="tag">AI · Documents</span></div>
+          <h3>Verdant</h3>
+          <p class="blurb">AI résumé &amp; cover-letter builder — upload a PDF/DOCX/TXT résumé, name a target role, and get tailored, review-before-download documents across hundreds of layouts.</p>
+          <div class="stack"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">Cloudflare Workers</span></div>
+          <div class="card-foot"><span class="status">Live</span><a class="go" href="https://github.com/pandushub" target="_blank" rel="noopener">open <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="fname">dashboard.jsx</span><span class="tag">Finance · Data</span></div>
+          <h3>Quant Dashboard</h3>
+          <p class="blurb">A quantitative finance dashboard streaming live market data into portfolio analytics — positions, performance, and risk in one readable view.</p>
+          <div class="stack"><span class="chip">Web</span><span class="chip">Live market data</span><span class="chip">Analytics</span></div>
+          <div class="card-foot"><span class="status">Live</span><a class="go" href="https://github.com/pandushub" target="_blank" rel="noopener">open <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="fname">terminal.js</span><span class="tag">Finance · Terminal</span></div>
+          <h3>Terminal</h3>
+          <p class="blurb">A Bloomberg-style financial terminal for a portfolio showcase — dense, real-time market readouts in a dark, information-first interface built for speed.</p>
+          <div class="stack"><span class="chip">Web</span><span class="chip">Real-time UI</span></div>
+          <div class="card-foot"><span class="status">Live</span><a class="go" href="https://github.com/pandushub" target="_blank" rel="noopener">open <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="fname">flashcards.js</span><span class="tag">AI · Learning</span></div>
+          <h3>Flashcard Generator</h3>
+          <p class="blurb">A local-first AI tool that turns notes into study flashcards, running the model on-device so nothing leaves the browser.</p>
+          <div class="stack"><span class="chip">Web</span><span class="chip">Local AI inference</span></div>
+          <div class="card-foot"><span class="status">Live</span><a class="go" href="https://github.com/pandushub" target="_blank" rel="noopener">open <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+      </div>
+
+      <p class="foot-note">© 2026 Pandu · Designed &amp; built by me · <a href="mailto:panduchiluvuri7@gmail.com">panduchiluvuri7@gmail.com</a></p>
+
+    </div>
+  </div>
+
+  <footer class="statusbar">
+    <span class="seg glyph">&#9095; main*</span>
+    <span class="seg"><span class="glyph">&#10003;</span> build passing</span>
+    <span class="seg hide-sm dim" id="sb-count">projects</span>
+    <span class="push"></span>
+    <span class="seg hide-sm dim">UTF-8</span>
+    <span class="seg dim">Ln 1, Col 1</span>
+    <span class="seg" id="clock">00:00:00</span>
+  </footer>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/statusbar.js"></script>
+<script src="js/terminal.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

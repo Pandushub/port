@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects — Pandu</title>
+<meta name="description" content="Selected projects by Pandu — web apps, finance tools, and AI." />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+<div class="editor">
+
+  <header class="tabbar">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <nav class="tabs" aria-label="Sections">
+      <a class="tab" data-file="index.html" href="index.html"><span class="fdot"></span>index.html</a>
+      <a class="tab" data-file="projects.html" href="projects.html"><span class="fdot"></span>projects.html</a>
+      <a class="tab" data-file="about.html" href="about.html"><span class="fdot"></span>about.html</a>
+    </nav>
+    <div class="spacer"></div>
+    <div class="meta">~/pandu/portfolio/projects</div>
+  </header>
+
+  <div class="viewport">
+    <div class="col">
+
+      <section class="page-intro">
+        <p class="comment"><span class="kw">/*</span> everything I've shipped <span class="kw">*/</span></p>
+        <h1>Projects</h1>
+        <p class="lead">A selection of things I've designed and built — web apps, finance tooling, and AI. Filter by area, then open any one.</p>
+        <div class="filters-row">
+          <div class="filters" id="filters"><!-- filter chips injected by render.js --></div>
+        </div>
+      </section>
+
+      <div class="section-head">
+        <h2>Results</h2>
+        <span class="count" id="proj-count">—</span>
+      </div>
+
+      <div class="grid" id="project-list">
+        <noscript>
+          <div class="empty">This project list is generated with JavaScript. Enable it, or view the deployed site to see every project.</div>
+        </noscript>
+      </div>
+
+      <p class="foot-note">© 2026 Pandu · <a href="mailto:panduchiluvuri7@gmail.com">panduchiluvuri7@gmail.com</a></p>
+
+    </div>
+  </div>
+
+  <footer class="statusbar">
+    <span class="seg glyph">&#9095; main*</span>
+    <span class="seg"><span class="glyph">&#10003;</span> build passing</span>
+    <span class="seg hide-sm dim" id="sb-count">projects</span>
+    <span class="push"></span>
+    <span class="seg hide-sm dim">UTF-8</span>
+    <span class="seg dim">Ln 1, Col 1</span>
+    <span class="seg" id="clock">00:00:00</span>
+  </footer>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/statusbar.js"></script>
+<script src="js/terminal.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
